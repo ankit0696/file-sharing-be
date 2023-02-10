@@ -5,10 +5,8 @@ module.exports = {
   upload: {
     config: {
       providerOptions: {
-        //10* 1gb in bytes
-        sizeLimit: 10 * 1024 * 1024 * 1024,
-      },
-    },
-  },
+        sizeLimit: 15 * 1024 * 1024 * 1024 // 15 GB
+      }
+    }
+  }
 };
-  

@@ -11,13 +11,16 @@ module.exports = [
   "strapi::public",
   {
     name: "strapi::body",
-    config: {
-      formLimit: "10gb", // modify form body
-      jsonLimit: "256mb", // modify JSON body
-      textLimit: "256mb", // modify text body
+    // set limit to 15 gb
+    config: { 
+      maxLimit: 15 * 1024 * 1024 * 1024,
+      formLimit: 15 * 1024 * 1024 * 1024,
+      jsonLimit: 15 * 1024 * 1024 * 1024,
+      textLimit: 15 * 1024 * 1024 * 1024,
       formidable: {
-        maxFileSize: 10 * 1024 * 1024 * 1024, // multipart data, modify here limit of uploaded file size
+        maxFileSize: 15 * 1024 * 1024 * 1024,
       },
+      includeUnparsed: true,
     },
   },
 ];

@@ -1,4 +1,36 @@
-# 🚀 Getting started with Strapi
+# 🚀 Getting started with Strapif
+
+### Modify file limit
+To modify the file limit, you need to modify the config/middleware.js file and config/plugins.js. You can find the file in the root of your project.
+    // path: ./config/plugins.js
+    ```js
+    module.exports = {
+      settings: {
+        parser: {
+          enabled: true,
+          multipart: true,
+          formidable: {
+            maxFileSize: 200 * 1024 * 1024, // Defaults to 200mb
+          },
+        },
+      },
+    };
+    ```
+
+```js
+// path: ./config/plugins.js
+
+module.exports = {
+  // ...
+  upload: {
+    config: {
+      providerOptions: {
+        sizeLimit: 15 * 1024 * 1024 * 1024 // 15 GB
+      }
+    }
+  }
+};
+```
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
 
